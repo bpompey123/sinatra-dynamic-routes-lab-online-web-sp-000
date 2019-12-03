@@ -14,4 +14,12 @@ class App < Sinatra::Base
 
     "#{@squarenumber}"
   end
+
+  get '/say/:number/:phrase' do
+    @phrasenumber = params[:number] times.do
+      puts params[:phrase]
+    end
+
+    "@phrasenumber"
+  end
 end
