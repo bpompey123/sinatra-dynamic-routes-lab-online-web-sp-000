@@ -28,20 +28,21 @@ class App < Sinatra::Base
   end
 
   get '/:operation/:number1/:number2' do
+    operation = params[:operation]
     number1 = params[:number1].to_i
     number2 = params[:number2].to_i
-
-    answer = 'Unable to perform this operation'
-
-    case params[:operation]
-    when 'add'
-      answer = (number1 + number2).to_s
-    when 'subtract'
-      answer = (number1 - number2).to_s
-    when 'multiply'
-      answer = (number1 * number2).to_s
-    when 'divide'
-      answer = (number1 / number2).to_s
+    if operation == "add"
+      answer = number1 + number2
+    elsif operation == "subtract"
+      answer = number1 - number2
+    elsif operation == "multiply"
+      answer = number1 * number2
+    elsif operation == "divide"
+      answer = number1 / number2
+    else
+      answer = "Unable to perform this operation"
     end
+    answer.to_s
   end
+
 end
