@@ -16,7 +16,7 @@ class App < Sinatra::Base
   end
 
   get '/say/:number/:phrase' do
-    @phrasenumber = params[:number] times.do
+    @phrasenumber = params[:number].to_i times.do
       puts params[:phrase]
     end
 
@@ -24,6 +24,10 @@ class App < Sinatra::Base
   end
 
   get '/say/:word1/:word2/:word3/:word4/:word5' do
-    @makelist = 
+    @makelist =
+  end
+
+  get '/:operation/:number1/:number2' do
+    @operator = params[:number1] params[:number2]
   end
 end
