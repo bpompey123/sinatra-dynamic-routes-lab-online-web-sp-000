@@ -20,6 +20,6 @@ class App < Sinatra::Base
       puts params[:phrase]
     end
 
-    "@phrasenumber"
+    "#{@phrasenumber}"
   end
 end
